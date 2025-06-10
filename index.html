@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Iottag Demo Responsive</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Hamburger menu button (top left) -->
+  <button class="hamburger-btn" id="hamburger-btn" title="Open Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <!-- Hamburger menu (slide from left) -->
+  <nav class="hamburger-menu" id="hamburger-menu">
+    <div class="hamburger-header">
+      Features
+      <button class="hamburger-close-btn" onclick="toggleHamburger(false)">×</button>
+    </div>
+    <ul id="hamburger-menu-list"></ul>
+  </nav>
+  
+  <!-- Highlight All button (top right) -->
+  <button class="circle-btn highlight-btn" id="highlight-btn" title="Highlight All" onclick="highlightAllHotspots()">
+    <img src="assets/images/tap.png" alt="Highlight All" draggable="false" />
+  </button>
+
+  <!-- Map background -->
+  <div class="bg-wrapper">
+    <div class="background" id="background"></div>
+  </div>
+
+  <!-- Fullscreen button (bottom right) -->
+  <div class="floating-btn-group" id="floating-btn-group">
+    <button class="circle-btn" id="fullscreen-btn" onclick="toggleFullscreen()" title="Expand Full Screen">
+      <span id="fullscreen-icon">
+        <img src="assets/images/expand.png" alt="Fullscreen" />
+      </span>
+    </button>
+  </div>
+
+  <!-- Modal overlay -->
+  <div id="modal-overlay" class="modal-overlay" onclick="closeModal()"></div>
+
+    <!-- Popup modal (slide from right) -->
+    <div id="modal" class="modal">
+    <div class="modal-header">
+      <!-- Close button (top left) -->
+      <h2 id="popup-title" style="flex:1; margin:0; text-align:center;">Sustainability</h2>
+      <!-- Close button (top right) -->
+      <button class="mui-close-btn" onclick="closeModal()" title="Close">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="12" r="12" fill="#F4F6F8"/>
+          <path d="M8 8L16 16M16 8L8 16" stroke="#323232" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="media-wrapper" id="media-wrapper"></div>
+      <div class="media-thumbnails" id="media-thumbnails"></div>
+      <p id="popup-desc" class="popup-desc"></p>
+      <div class="qr-section" id="qr-section">
+        <div>Scan to learn more</div>
+        <img src="assets/images/qr-code.png" alt="QR Code">
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

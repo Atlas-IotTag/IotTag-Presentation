@@ -45,27 +45,21 @@
 
     <!-- Popup modal (slide from right) -->
     <div id="modal" class="modal">
-    <div class="modal-header">
-      <!-- Close button (top left) -->
-      <h2 id="popup-title" style="flex:1; margin:0; text-align:center;">Sustainability</h2>
-      <!-- Close button (top right) -->
-      <button class="mui-close-btn" onclick="closeModal()" title="Close">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <circle cx="12" cy="12" r="12" fill="#F4F6F8"/>
-          <path d="M8 8L16 16M16 8L8 16" stroke="#323232" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-      </button>
-    </div>
-    <div class="modal-body">
-      <div class="media-wrapper" id="media-wrapper"></div>
-      <div class="media-thumbnails" id="media-thumbnails"></div>
-      <p id="popup-desc" class="popup-desc"></p>
-      <div class="qr-section" id="qr-section">
-        <div>Scan to learn more</div>
-        <img src="assets/images/qr-code.png" alt="QR Code">
+      <div class="modal-header">
+        <button class="mui-close-btn" onclick="closeModal()" title="Close">&times;</button>
+        <h2 id="popup-title">Tag + PPE Verification</h2>
+        <div class="qr-header-section">
+          <span class="qr-header-text">Scan to learn more</span>
+          <img src="assets/images/qr-code.png" alt="QR Code" />
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="media-wrapper" id="media-wrapper"></div>
+        <div class="media-thumbnails" id="media-thumbnails"></div>
+        <p id="popup-desc" class="popup-desc"></p>
       </div>
     </div>
-  </div>
+
 </div>
 
 <script src="js/data.js"></script>

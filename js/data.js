@@ -1,17 +1,20 @@
 const hotspotData = [
   {
     label: "Assembly Point",
-    ...pixelToRatio(104, 629),
+    icon: "assets/hotspot/icon/iottag.png",
+    ...pixelToRatio(200, 550),
     isSpecial: false,
     medias: [
       { name: "Assembly Muster Point",
         desc: "Enable personnel to initiate a duress signal and evacuation procedures. SMS and email links are sent to management teams to facilitate a smooth and coordinated evacuation.", 
         url: "assets/hotspot/media/Assembly-Muster-Point.mp4",
-        thumbImg: "assets/hotspot/thumbnail/assembly-point-thumbnail.png" },
+        thumbImg: "assets/hotspot/thumbnail/assembly-point-thumbnail.png",
+      }
     ]
   },
   {
     label: "Fall Detection + Man Down + SOS + Heatstress Monitoring",
+    icon: "assets/hotspot/icon/engineer.png",
     ...pixelToRatio(637, 736),
     isSpecial: false,
     medias: [
@@ -26,7 +29,16 @@ const hotspotData = [
     ]
   },
   {
+    label: "Trafic Signals",
+    icon: "assets/hotspot/icon/iottag.png",
+    ...pixelToRatio(522, 629),
+    isSpecial: false,
+    medias: [
+    ]
+  },
+  {
     label: "Team Alert",
+    icon: "assets/hotspot/icon/iottag.png",
     ...pixelToRatio(522, 629),
     isSpecial: false,
     medias: [
@@ -44,6 +56,7 @@ const hotspotData = [
   // },
   {
     label: "Air Quality + Wind Direction",
+    icon: "assets/hotspot/icon/air-quality.png",
     ...pixelToRatio(720, 575),
     isSpecial: false,
     medias: [
@@ -59,6 +72,7 @@ const hotspotData = [
   },
   {
     label: "Logistics + Supply Chain",
+    icon: "assets/hotspot/icon/logistics.png",
     ...pixelToRatio(849, 325),
     isSpecial: false,
     medias: [
@@ -70,6 +84,7 @@ const hotspotData = [
   },
   {
     label: "Toolbox Meeting",
+    icon: "assets/hotspot/icon/iottag.png",
     ...pixelToRatio(843, 976),
     isSpecial: false,
     medias: [
@@ -81,6 +96,7 @@ const hotspotData = [
   },
   {
     label: "Operator Tracking + Environmental Sensors",
+    icon: "assets/hotspot/icon/engineer.png",
     ...pixelToRatio(818, 455),
     isSpecial: false,
     medias: [
@@ -98,6 +114,7 @@ const hotspotData = [
   // },
   {
     label: "Equipment Inspections",
+    icon: "assets/hotspot/icon/checkbox.png",
     ...pixelToRatio(818, 683),
     isSpecial: false,
     medias: [
@@ -119,6 +136,7 @@ const hotspotData = [
   // },
   {
     label: "Occupancy Tracking",
+    icon: "assets/hotspot/icon/engineer.png",
     ...pixelToRatio(1015, 617),
     isSpecial: false,
     medias: [
@@ -130,6 +148,7 @@ const hotspotData = [
   },
   {
     label: "Access Control",
+    icon: "assets/hotspot/icon/iottag.png",
     ...pixelToRatio(1204, 141),
     isSpecial: false,
     medias: [
@@ -141,6 +160,7 @@ const hotspotData = [
   },
   {
     label: "Tag + PPE Verification",
+    icon: "assets/hotspot/icon/iottag.png",
     ...pixelToRatio(1285, 141),
     isSpecial: false,
     medias: [
@@ -162,6 +182,7 @@ const hotspotData = [
   // },
   {
     label: "Traffic Management",
+    icon: "assets/hotspot/icon/iottag.png",
     ...pixelToRatio(1123, 596),
     isSpecial: true,
     medias: [
@@ -187,6 +208,7 @@ const hotspotData = [
   // },
   {
     label: "Personnel Safety Tracking",
+    icon: "assets/hotspot/icon/engineer.png",
     ...pixelToRatio(1216, 586),
     isSpecial: false,
     medias: [
@@ -210,6 +232,7 @@ const hotspotData = [
   },
   {
     label: "Safety Inspections",
+    icon: "assets/hotspot/icon/checkbox.png",
     ...pixelToRatio(1318, 553),
     isSpecial: false,
     medias: [
@@ -219,18 +242,17 @@ const hotspotData = [
         thumbImg: "assets/hotspot/thumbnail/safety-inspection-thumbnail.png" }
     ]
   },
-  // {
-  //   label: "Segment Erector Safe Zone",
-  //   ...pixelToRatio(1678, 141),
-  //   isSpecial: false,
-  //   medias: [
-  //     { desc: "Tracking the most dangerous spaces underground, boost safety with advanced risk control solutions.", 
-  //       url: "https://www.youtube.com/watch?v=3JZ_D3ELwOQ",
-  //       thumbImg: "assets/hotspot/thumbnail/access-control-thumbnail.png" }
-  //   ]
-  // },
+  {
+    label: "Segment Erector Safe Zone",
+    icon: "assets/hotspot/icon/engineer.png",
+    ...pixelToRatio(1678, 141),
+    isSpecial: false,
+    medias: [
+    ]
+  },
   {
     label: "Refuge Chamber",
+    icon: "assets/hotspot/icon/engineer.png",
     ...pixelToRatio(1708, 466),
     isSpecial: false,
     medias: [

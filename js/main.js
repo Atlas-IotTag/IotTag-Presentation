@@ -1,38 +1,87 @@
 // ============ Render Hotspots =============
 function renderHotspots() {
   const bg = document.getElementById("background");
-  bg.innerHTML = ""; // Clear old
+  bg.innerHTML = "";
   const bgRect = bg.getBoundingClientRect();
+
+  const baseCardWidth = bgRect.width * 0.08;  
+  const baseCardHeight = bgRect.height * 0.05;
+  const baseIconSize = baseCardHeight * 0.8;
+  const baseFontSize = Math.max(11, baseCardHeight * 0.15);
+
   hotspotData.forEach((h, i) => {
     const btn = document.createElement("button");
     btn.className = "hotspot";
     btn.setAttribute("tabindex", "0");
     btn.onclick = () => openModal(h);
+    btn.style.position = "absolute";
 
-    // Position hotspot
+    // Card
     const x = h.x * bgRect.width;
     const y = h.y * bgRect.height;
-    btn.style.position = "absolute";
     btn.style.left = `${x}px`;
     btn.style.top = `${y}px`;
 
     // Responsive size
-    const size = Math.max(18, Math.min(44, bgRect.width * 0.027));
-    btn.style.width = btn.style.height = size + "px";
+    btn.style.width = baseCardWidth + "px";
+    btn.style.height = baseCardHeight + "px";
+    btn.style.background = "none";
+    btn.style.border = "none";
+    btn.style.padding = "0";
+    btn.style.cursor = "pointer";
 
-    if (h.isSpecial) btn.classList.add("red");
+    // Card container
+    const card = document.createElement("div");
+    card.className = "alert-card";
+    card.style.width = "100%";
+    card.style.height = "100%";
+    card.style.fontSize = baseFontSize + "px";
 
-    // Icon
+    // Icon box
+    const iconBox = document.createElement("div");
+    iconBox.className = "alert-icon-box";
+    iconBox.style.width = baseCardHeight + "px";
+    iconBox.style.height = "100%";
+    iconBox.style.display = "flex";
+    iconBox.style.alignItems = "center";
+    iconBox.style.justifyContent = "center";
+    iconBox.style.background = "#249ad8";
+
     const img = document.createElement('img');
-    img.src = 'assets/images/tap.png';
-    img.alt = 'Tap';
-    img.style.width = img.style.height = "70%";
-    btn.appendChild(img);
+    img.src = h.icon;
+    img.alt = "icon";
+    img.style.width = baseIconSize + "px";
+    img.style.height = baseIconSize + "px";
+    img.style.objectFit = "contain";
+    iconBox.appendChild(img);
 
+    // Text content
+    const content = document.createElement("div");
+    content.className = "alert-content";
+    content.style.flex = "1";
+    content.style.display = "flex";
+    content.style.alignItems = "center";
+    content.style.justifyContent = "center";
+    content.style.textAlign = "center";
+    content.style.fontWeight = "600";
+    content.textContent = h.label || "";
+
+    // Card structure: icon left, text right
+    card.appendChild(iconBox);
+    card.appendChild(content);
+
+    btn.appendChild(card);
     bg.appendChild(btn);
   });
 }
-window.addEventListener('resize', renderHotspots);
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.hotspot').forEach(btn => {
+    btn.addEventListener('click', function() {
+      btn.setAttribute('data-state', 'clicked');
+    });
+  });
+});
 
 // ============ Hamburger Menu =============
 function toggleHamburger(forceOpen) {
@@ -74,12 +123,10 @@ function highlightAllHotspots() {
 }
 
 // ============ Modal Logic =============
-// ============ Modal Logic =============
 let currentMedias = [];
 let currentMediaIndex = 0;
 
 function openModal(data) {
-  // Chỉ lấy các media có url là file .mp4
   if (Array.isArray(data.medias) && data.medias.length) {
     currentMedias = data.medias.filter(m => {
       if (!m.url) return false;
@@ -177,7 +224,6 @@ function renderMediaThumbnails() {
   }
 }
 
-// Đóng modal và clear
 function closeModal() {
   document.getElementById("modal").classList.remove("show");
   document.getElementById("modal-overlay").style.display = "none";

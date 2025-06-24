@@ -26,7 +26,7 @@ html, body {
   height: auto;
   max-height: 100vh;
   min-width: 0; min-height: 0;
-  background: url('../assets/images/background.png') no-repeat center center;
+  background: url('../assets/images/new_background.jpg') no-repeat center center;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -140,40 +140,57 @@ html, body {
 
 /* Hotspot */
 .hotspot {
-  position: absolute; border-radius: 50%;
-  border: none; background: #268fc3ff;
-  transition: transform 0.18s cubic-bezier(.45,1.4,.4,1), box-shadow 0.2s;
-  z-index: 2;
-  animation: scale-pulse 1.6s infinite alternate;
-  display: flex; align-items: center; justify-content: center;
+  background: none;
+  border: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+}
+.alert-card {
+  display: flex;
+  align-items: center;
+  border: 2px solid #249ad8;
+  border-radius: 5px;
   overflow: hidden;
+  background: rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px #0001;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #232323;
+  transition: box-shadow .2s;
 }
-@keyframes scale-pulse {
-  0%   { transform: scale(1);}
-  100% { transform: scale(1.15);}
+.alert-icon-box img {
+  filter: drop-shadow(0 0 2px #fff5);
 }
-.hotspot.red { background: red; }
+
+.hotspot:hover, .hotspot:focus-visible {
+  border-color: #249ad8;
+  box-shadow: 0 0 24px 4px #249ad8cc, 0 4px 18px #249ad8aa;
+  animation: hotspot-glow 1.2s infinite alternate;
+}
+
+.hotspot:active {
+  border-color: #1a6a93;
+  box-shadow: 0 0 4px 0 #249ad890;
+  animation: none;
+}
+
+@keyframes hotspot-glow {
+  0%   { box-shadow: 0 0 10px 2px #249ad870, 0 4px 14px #249ad850; }
+  50%  { box-shadow: 0 0 28px 12px #249ad8ee, 0 8px 24px #249ad8cc; }
+  100% { box-shadow: 0 0 10px 2px #249ad870, 0 4px 14px #249ad850; }
+}
+
 .hotspot img {
-  width: 70%; height: 70%;
-  display: block; margin: 0 auto; pointer-events: none; filter: none; user-select: none;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  background: transparent;
+  margin: 0; padding: 0; border: none;
 }
-.hotspot:hover, .hotspot:focus {
-  outline: none; border: none; animation: scale-pulse-hover 0.7s infinite alternate;
-}
-@keyframes scale-pulse-hover {
-  0%   { transform: scale(1.3);}
-  100% { transform: scale(1.5);}
-}
+
 .hotspot.highlight-pulse {
-  animation: highlight-scale 1.2s cubic-bezier(.65,0,.45,1) 2 !important;
-}
-@keyframes highlight-scale {
-  0%   { transform: scale(1);}
-  40%  { transform: scale(1.25);}
-  100% { transform: scale(1);}
-}
-.hotspot.active {
-  box-shadow: 0 0 24px 6px #007acc, 0 2px 8px #007acc88; z-index: 99;
+  animation: hotspot-glow 1.2s cubic-bezier(.65,0,.45,1) 2 !important;
 }
 
 /* Modal Overlay */

@@ -5,8 +5,8 @@ function renderHotspots() {
   const bgRect = bg.getBoundingClientRect();
 
   const baseCardWidth = bgRect.width * 0.08;  
-  const baseCardHeight = bgRect.height * 0.05;
-  const baseIconSize = baseCardHeight * 0.8;
+  const baseCardHeight = bgRect.height * 0.04;
+  const baseIconSize = baseCardHeight * 0.6;
   const baseFontSize = Math.max(11, baseCardHeight * 0.15);
 
   hotspotData.forEach((h, i) => {
@@ -50,8 +50,7 @@ function renderHotspots() {
     const img = document.createElement('img');
     img.src = h.icon;
     img.alt = "icon";
-    img.style.width = baseIconSize + "px";
-    img.style.height = baseIconSize + "px";
+    img.style.width = img.style.height = baseIconSize + "px";
     img.style.objectFit = "contain";
     iconBox.appendChild(img);
 

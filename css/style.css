@@ -146,6 +146,7 @@ html, body {
   padding: 0;
   margin: 0;
 }
+
 .alert-card {
   display: flex;
   align-items: center;

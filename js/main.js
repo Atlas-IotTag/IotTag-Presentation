@@ -1,26 +1,64 @@
 // ============ Render Hotspots =============
+const FONT_SIZE = 16; // Base font size for calculations
+const REFERENCE_WIDTH = 2560; // Reference background div width
+const REFERENCE_HEIGHT = 1600; // Reference background div height
+
+// Calculate scale factors based on current background div vs reference background div
+function getScaleFactors() {
+  const bg = document.getElementById("background");
+  if (!bg) {
+    return { scaleX: 1, scaleY: 1, uniformScale: 1 };
+  }
+
+  const bgRect = bg.getBoundingClientRect();
+  const currentWidth = bgRect.width;
+  const currentHeight = bgRect.height;
+  
+  const scaleX = currentWidth / REFERENCE_WIDTH;
+  const scaleY = currentHeight / REFERENCE_HEIGHT;
+
+  console.log(`Background Scale Factors - X: ${scaleX}, Y: ${scaleY}`);
+  
+  // Use the smaller scale to maintain aspect ratio
+  const uniformScale = Math.min(scaleX, scaleY);
+  
+  return {
+    scaleX,
+    scaleY,
+    uniformScale
+  };
+}
+
 function renderHotspots() {
   const bg = document.getElementById("background");
   bg.innerHTML = "";
   const bgRect = bg.getBoundingClientRect();
 
+  const scales = getScaleFactors();
+  
+  // Scale base dimensions
   const baseCardWidth = bgRect.width * 0.08;  
   const baseCardHeight = bgRect.height * 0.04;
   const baseIconSize = baseCardHeight * 0.6;
-  const baseFontSize = Math.max(11, baseCardHeight * 0.15);
+  const scaledFontSize = FONT_SIZE * scales.uniformScale;
 
   hotspotData.forEach((h, i) => {
     const btn = document.createElement("button");
     btn.className = "hotspot";
     btn.setAttribute("tabindex", "0");
     btn.onclick = () => openModal(h);
+    
+    // Calculate scaled position - no need for getDynamicPosition anymore
+    const scaledX = h.x;
+    const scaledY = h.y;
+    
+    // Use position absolute with percentage and transform for center positioning
     btn.style.position = "absolute";
-
-    // Card
-    const x = h.x * bgRect.width;
-    const y = h.y * bgRect.height;
-    btn.style.left = `${x}px`;
-    btn.style.top = `${y}px`;
+    btn.style.left = `${scaledX * 100}%`;
+    btn.style.top = `${scaledY * 100}%`;
+    btn.style.transform = "translate(-50%, -50%)";
+    btn.style.transformOrigin = "left center";
+    btn.style.zIndex = "10";
 
     // Responsive size
     btn.style.width = baseCardWidth + "px";
@@ -35,7 +73,7 @@ function renderHotspots() {
     card.className = "alert-card";
     card.style.width = "100%";
     card.style.height = "100%";
-    card.style.fontSize = baseFontSize + "px";
+    card.style.fontSize = scaledFontSize + "px";
 
     // Icon box
     const iconBox = document.createElement("div");
@@ -63,6 +101,10 @@ function renderHotspots() {
     content.style.justifyContent = "center";
     content.style.textAlign = "center";
     content.style.fontWeight = "600";
+    content.style.overflowWrap = "break-word";
+    content.style.whiteSpace = "normal";
+    content.style.wordBreak = "break-word";
+    content.style.padding = `0px ${10 * scales.uniformScale}px`;
     content.textContent = h.label || "";
 
     // Card structure: icon left, text right
@@ -265,3 +307,8 @@ window.onload = function() {
   renderHotspots();
   renderHamburgerMenuList();
 };
+
+// Add window resize event listener to re-render hotspots when screen size changes
+window.addEventListener('resize', function() {
+  renderHotspots();
+});

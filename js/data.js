@@ -1,18 +1,21 @@
 const hotspotData = [
   {
     label: "Assembly Point",
-    ...pixelToRatio(104, 629),
+    icon: "assets/hotspot/icon/iottag.png",
+    ...percentToRatio(8.5, 55.5),
     isSpecial: false,
     medias: [
       { name: "Assembly Muster Point",
         desc: "Enable personnel to initiate a duress signal and evacuation procedures. SMS and email links are sent to management teams to facilitate a smooth and coordinated evacuation.", 
         url: "assets/hotspot/media/Assembly-Muster-Point.mp4",
-        thumbImg: "assets/hotspot/thumbnail/assembly-point-thumbnail.png" },
+        thumbImg: "assets/hotspot/thumbnail/assembly-point-thumbnail.png",
+      }
     ]
   },
   {
-    label: "Fall Detection + Man Down + SOS + Heatstress Monitoring",
-    ...pixelToRatio(637, 736),
+    label: "Fall Detection SOS",
+    icon: "assets/hotspot/icon/engineer.png",
+    ...percentToRatio(38, 75), // 637px/1920px = 33.18%, 736px/1084px = 67.90%
     isSpecial: false,
     medias: [
       { name:"Fall Detection SOS",
@@ -27,7 +30,8 @@ const hotspotData = [
   },
   {
     label: "Team Alert",
-    ...pixelToRatio(522, 629),
+    icon: "assets/hotspot/icon/iottag.png",
+    ...percentToRatio(20.7, 44), // 450px/1920px = 23.44%, 485px/1084px = 44.74%
     isSpecial: false,
     medias: [
       { name: "Team Alert",
@@ -36,15 +40,10 @@ const hotspotData = [
         thumbImg: "assets/hotspot/thumbnail/team-alert-thumbnail.png" }
     ]
   },
-  // {
-  //   label: "Sustainabilty",
-  //   ...pixelToRatio(624, 596),
-  //   isSpecial: true,
-  //   medias: []
-  // },
   {
     label: "Air Quality + Wind Direction",
-    ...pixelToRatio(720, 575),
+    icon: "assets/hotspot/icon/air-quality.png",
+    ...percentToRatio(31.42, 41), // 680px/1920px = 35.42%, 440px/1084px = 40.59%
     isSpecial: false,
     medias: [
       { name: "Air Quality",
@@ -59,7 +58,8 @@ const hotspotData = [
   },
   {
     label: "Logistics + Supply Chain",
-    ...pixelToRatio(849, 325),
+    icon: "assets/hotspot/icon/logistics.png",
+    ...percentToRatio(49.5, 30), // 830px/1920px = 43.23%, 305px/1084px = 28.14%
     isSpecial: false,
     medias: [
       { name: "Logistics + Supply Chain",
@@ -70,7 +70,8 @@ const hotspotData = [
   },
   {
     label: "Toolbox Meeting",
-    ...pixelToRatio(843, 976),
+    icon: "assets/hotspot/icon/iottag.png",
+    ...percentToRatio(49.5, 94), // 900px/1920px = 46.88%, 900px/1084px = 83.03%
     isSpecial: false,
     medias: [
       { name: "Toolbox Meeting",
@@ -80,8 +81,9 @@ const hotspotData = [
     ]
   },
   {
-    label: "Operator Tracking + Environmental Sensors",
-    ...pixelToRatio(818, 455),
+    label: "Operator ID + Cabin Temp.",
+    icon: "assets/hotspot/icon/engineer.png",
+    ...percentToRatio(39, 35), // 600px/1920px = 31.25%, 380px/1084px = 35.06%
     isSpecial: false,
     medias: [
       { name: "Operator Tracking Env Sensors",
@@ -90,15 +92,10 @@ const hotspotData = [
         thumbImg: "assets/hotspot/thumbnail/operator-tracking-env-sensors-thumbnail.png" }
     ]
   },
-  // {
-  //   label: "Hazards",
-  //   ...pixelToRatio(778, 867),
-  //   isSpecial: true,
-  //   medias: []
-  // },
   {
-    label: "Equipment Inspections",
-    ...pixelToRatio(818, 683),
+    label: "Equipment Inspection",
+    icon: "assets/hotspot/icon/checkbox.png",
+    ...percentToRatio(47, 71.5), // 818px/1920px = 42.60%, 683px/1084px = 63.01%
     isSpecial: false,
     medias: [
       { name: "Equipment Inspection",
@@ -111,15 +108,10 @@ const hotspotData = [
         thumbImg: "assets/hotspot/2nd_thumbnail/Equipment-Inspection-2-tracking-equipment-thumbnail.png" }
     ]
   },
-  // {
-  //   label: "Environmental Safety",
-  //   ...pixelToRatio(920, 542),
-  //   isSpecial: true,
-  //   medias: []
-  // },
   {
-    label: "Occupancy Tracking",
-    ...pixelToRatio(1015, 617),
+    label: "Manrider Occupants ID",
+    icon: "assets/hotspot/icon/engineer.png",
+    ...percentToRatio(57, 67), // 980px/1920px = 51.04%, 617px/1084px = 56.91%
     isSpecial: false,
     medias: [
       { name: "Manrider-Occupants-ID",
@@ -130,7 +122,8 @@ const hotspotData = [
   },
   {
     label: "Access Control",
-    ...pixelToRatio(1204, 141),
+    icon: "assets/hotspot/icon/iottag.png",
+    ...percentToRatio(60, 11), // 1100px/1920px = 57.29%, 130px/1084px = 11.99%
     isSpecial: false,
     medias: [
       { name: "Access Control",
@@ -141,7 +134,8 @@ const hotspotData = [
   },
   {
     label: "Tag + PPE Verification",
-    ...pixelToRatio(1285, 141),
+    icon: "assets/hotspot/icon/iottag.png",
+    ...percentToRatio(71.72, 7.84), // 1185px/1920px = 61.72%, 85px/1084px = 7.84%
     isSpecial: false,
     medias: [
       { name: "Tag-PPE-Verification",
@@ -155,39 +149,35 @@ const hotspotData = [
     ]
   },
   // {
-  //   label: "Compliance Adherence",
-  //   ...pixelToRatio(1363, 141),
+  //   label: "Traffic Management",
+  //   icon: "assets/hotspot/icon/iottag.png",
+  //   ...pixelToRatio(1123, 596),
   //   isSpecial: true,
-  //   medias: []
+  //   medias: [
+  //     { name: "Traffic-Control",
+  //       desc: "Fully integrated to enhance safety and control, providing real-time guidance to workers and vehicles, helping prevent accidents and improve workflow efficiency.", 
+  //       url: "assets/hotspot/media/Traffic-Control.mp4",
+  //       thumbImg: "assets/hotspot/thumbnail/traffic-control-thumbnail.png" },
+  //     { name: "Traffic Management",
+  //       desc: "Fully integrated to enhance safety and control, providing real-time guidance to workers and vehicles, helping prevent accidents and improve workflow efficiency.", 
+  //       url: "assets/hotspot/2nd_media/traffic-control-2-traffic-management.mp4",
+  //       thumbImg: "assets/hotspot/2nd_thumbnail/traffic-control-2-traffic-management-thumbnail.png" },
+  //     { name: "Vehicle Tracking",
+  //       desc: "Fully integrated to enhance safety and control, providing real-time guidance to workers and vehicles, helping prevent accidents and improve workflow efficiency.", 
+  //       url: "assets/hotspot/2nd_media/traffic-control-3-vehicle-tracking.mp4",
+  //       thumbImg: "assets/hotspot/2nd_thumbnail/traffic-control-3-vehicle-tracking-thumbnail.png" }
+  //   ]
   // },
-  {
-    label: "Traffic Management",
-    ...pixelToRatio(1123, 596),
-    isSpecial: true,
-    medias: [
-      { name: "Traffic-Control",
-        desc: "Fully integrated to enhance safety and control, providing real-time guidance to workers and vehicles, helping prevent accidents and improve workflow efficiency.", 
-        url: "assets/hotspot/media/Traffic-Control.mp4",
-        thumbImg: "assets/hotspot/thumbnail/traffic-control-thumbnail.png" },
-      { name: "Traffic Management",
-        desc: "Fully integrated to enhance safety and control, providing real-time guidance to workers and vehicles, helping prevent accidents and improve workflow efficiency.", 
-        url: "assets/hotspot/2nd_media/traffic-control-2-traffic-management.mp4",
-        thumbImg: "assets/hotspot/2nd_thumbnail/traffic-control-2-traffic-management-thumbnail.png" },
-      { name: "Vehicle Tracking",
-        desc: "Fully integrated to enhance safety and control, providing real-time guidance to workers and vehicles, helping prevent accidents and improve workflow efficiency.", 
-        url: "assets/hotspot/2nd_media/traffic-control-3-vehicle-tracking.mp4",
-        thumbImg: "assets/hotspot/2nd_thumbnail/traffic-control-3-vehicle-tracking-thumbnail.png" }
-    ]
-  },
   // {
   //   label: "Fatigue Management",
-  //   ...pixelToRatio(1276, 759),
+  //   ...percentToRatio(66.46, 70.02), // 1276px/1920px = 66.46%, 759px/1084px = 70.02%
   //   isSpecial: true,
   //   medias: []
   // },
   {
     label: "Personnel Safety Tracking",
-    ...pixelToRatio(1216, 586),
+    icon: "assets/hotspot/icon/engineer.png",
+    ...percentToRatio(68, 64.5), // 1216px/1920px = 63.33%, 586px/1084px = 54.06%
     isSpecial: false,
     medias: [
       { name: "Personal Safety Tracking",
@@ -210,7 +200,8 @@ const hotspotData = [
   },
   {
     label: "Safety Inspections",
-    ...pixelToRatio(1318, 553),
+    icon: "assets/hotspot/icon/checkbox.png",
+    ...percentToRatio(75.5, 58.5), // 1318px/1920px = 68.65%, 553px/1084px = 51.01%
     isSpecial: false,
     medias: [
       { name: "Safety Inspection",
@@ -219,19 +210,19 @@ const hotspotData = [
         thumbImg: "assets/hotspot/thumbnail/safety-inspection-thumbnail.png" }
     ]
   },
-  // {
-  //   label: "Segment Erector Safe Zone",
-  //   ...pixelToRatio(1678, 141),
-  //   isSpecial: false,
-  //   medias: [
-  //     { desc: "Tracking the most dangerous spaces underground, boost safety with advanced risk control solutions.", 
-  //       url: "https://www.youtube.com/watch?v=3JZ_D3ELwOQ",
-  //       thumbImg: "assets/hotspot/thumbnail/access-control-thumbnail.png" }
-  //   ]
-  // },
+  {
+    label: "Segment Erector Safe Zone",
+    icon: "assets/hotspot/icon/engineer.png",
+    ...percentToRatio(93.5, 6), // 1678px/1920px = 87.40%, 141px/1084px = 13.01%
+    isSpecial: false,
+    isDisabled: true,
+    medias: [
+    ]
+  },
   {
     label: "Refuge Chamber",
-    ...pixelToRatio(1708, 466),
+    icon: "assets/hotspot/icon/engineer.png",
+    ...percentToRatio(88, 51), // 1708px/1920px = 88.96%, 466px/1084px = 42.99%
     isSpecial: false,
     medias: [
       { name: "Refuge Chamber",
@@ -242,10 +233,10 @@ const hotspotData = [
   }
 ];
 
-// ============= Helper: Convert Pixel to Ratio =============
-function pixelToRatio(pixelX, pixelY, imgWidth = 1920, imgHeight = 1084) {
+// ============= Helper: Convert Percentage to Ratio =============
+function percentToRatio(percentX, percentY) {
   return {
-    x: +(pixelX / imgWidth).toFixed(5),
-    y: +(pixelY / imgHeight).toFixed(5),
+    x: +(percentX / 100).toFixed(5),
+    y: +(percentY / 100).toFixed(5),
   };
 }

@@ -20,12 +20,14 @@
     </div>
     <ul id="hamburger-menu-list"></ul>
   </nav>
-  
-  <!-- Highlight All button (top right) -->
-  <button class="circle-btn highlight-btn" id="highlight-btn" title="Highlight All" onclick="highlightAllHotspots()">
-    <img src="assets/images/tap.png" alt="Highlight All" draggable="false" />
-  </button>
-
+  <!-- Màn hình chờ (Loading Spinner) -->
+  <div id="loader-overlay" class="loader-overlay">
+    <div class="spinner"></div>
+  </div>
+  <!-- Add this new alert box -->
+  <div id="welcome-alert" class="welcome-alert">
+    Welcome! Click any glowing button to explore more info and watch videos.
+  </div>
   <!-- Map background -->
   <div class="bg-wrapper">
     <div class="background" id="background"></div>

@@ -183,6 +183,8 @@ document.getElementById("hamburger-btn").onclick = () => toggleHamburger();
 function renderHamburgerMenuList() {
   const list = document.getElementById("hamburger-menu-list");
   list.innerHTML = "";
+
+  // Render regular hotspot items (filtered)
   hotspotData
     .filter(h => h.label !== "Segment Erector Safe Zone") // Filter out Segment Erector Safe Zone
     .forEach((h, idx) => {
@@ -210,6 +212,27 @@ function renderHamburgerMenuList() {
     li.appendChild(a);
     list.appendChild(li);
   });
+  
+  // Add Contact Us item at the end
+  const contactLi = document.createElement("li");
+  const contactA = document.createElement("a");
+  contactA.href = "#";
+  contactA.textContent = "Contact Us";
+  contactA.classList.add("contact-us");
+  contactA.onclick = function (e) {
+    e.preventDefault();
+    // Create contact data object
+    const contactData = {
+      label: "Contact Us",
+      isContactUs: true, // Special flag to identify contact us modal
+      qrImage: "assets/images/qr-code-dallas.png"
+    };
+    openModal(contactData);
+    toggleHamburger(false);
+  };
+  
+  contactLi.appendChild(contactA);
+  list.appendChild(contactLi);
 }
 
 // ============ Modal Logic =============
@@ -217,6 +240,44 @@ let currentMedias = [];
 let currentMediaIndex = 0;
 
 function openModal(data) {
+  // Check if this is Contact Us modal
+  const popupDesc = document.getElementById("popup-desc");
+
+  if (data.isContactUs) {
+    currentMedias = [];
+    currentMediaIndex = 0;
+    
+    document.getElementById("modal").classList.add("show");
+    document.getElementById("modal-overlay").style.display = "block";
+    document.getElementById("popup-title").textContent = data.label || "";
+    document.getElementById("popup-desc").innerText = "Scan the QR code to get in touch with us";
+    
+    // Show QR code image
+    const wrapper = document.getElementById("media-wrapper");
+    wrapper.innerHTML = "";
+    wrapper.style.background = "transparent"; // Remove dark background for QR code
+
+    // Show QR code image
+    popupDesc.style.textAlign = "center"; // Remove dark background for QR code
+    
+    const img = document.createElement("img");
+    img.src = data.qrImage;
+    img.alt = "Contact QR Code";
+    img.style.width = "100%";
+    img.style.height = "100%";
+    img.style.objectFit = "contain";
+    img.style.borderRadius = "8px";
+    wrapper.appendChild(img);
+    
+    // Clear thumbnails for contact us
+    document.getElementById('media-thumbnails').innerHTML = "";
+    return;
+  } else {
+    // Show QR code image
+    popupDesc.style.textAlign = "left"; // Remove dark background for QR code
+  }
+  
+  // Original modal logic for regular items
   if (Array.isArray(data.medias) && data.medias.length) {
     currentMedias = data.medias.filter(m => {
       if (!m.url) return false;
@@ -231,6 +292,10 @@ function openModal(data) {
   document.getElementById("modal").classList.add("show");
   document.getElementById("modal-overlay").style.display = "block";
   document.getElementById("popup-title").textContent = data.label || "";
+
+  // Reset background for regular modals
+  const wrapper = document.getElementById("media-wrapper");
+  wrapper.style.background = "#222";
 
   if (currentMedias.length > 0 && currentMedias[0].desc) {
     document.getElementById("popup-desc").innerText = currentMedias[0].desc;

@@ -140,7 +140,7 @@ function renderHotspots() {
     iconBox.appendChild(img);
 
     const content = document.createElement("div");
-    if (h.label === 'Fall Detection SOS' || h.label === 'Equipment Inspection' || h.label === 'Manrider Occupants ID' || h.label === 'Personnel Safety Tracking' || h.label === 'Safety Inspections')
+    if (h.label === 'Fall Detection SOS' || h.label === 'Equipment Inspection' || h.label === 'Manrider Occupants ID' || h.label === 'Personnel Safety Tracking' || h.label === 'Safety Inspections' || h.label === 'Refuge Chamber')
       content.style.color = "white"
     content.className = "alert-content";
     content.style.flex = "1";

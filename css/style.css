@@ -168,21 +168,21 @@ html, body {
 
 .hotspot:hover, .hotspot:focus-visible {
   border-color: #249ad8;
-  box-shadow: 0 0 24px 4px #249ad8cc, 0 4px 18px #249ad8aa;
+  box-shadow: 0 0 17px 3px #249ad890, 0 3px 13px #249ad877;
   animation: hotspot-glow 1.2s infinite alternate;
   filter: brightness(1.50);
 }
 
 .hotspot:active {
   border-color: #1a6a93;
-  box-shadow: 0 0 4px 0 #249ad890;
+  box-shadow: 0 0 3px 0 #249ad864;
   animation: none;
 }
 
 @keyframes hotspot-glow {
-  0%   { box-shadow: 0 0 10px 2px #249ad870, 0 4px 14px #249ad850; }
-  50%  { box-shadow: 0 0 28px 12px #249ad8ee, 0 8px 24px #249ad8cc; }
-  100% { box-shadow: 0 0 10px 2px #249ad870, 0 4px 14px #249ad850; }
+  0%   { box-shadow: 0 0 7px 1px #249ad84e, 0 3px 10px #249ad838; }
+  50%  { box-shadow: 0 0 20px 8px #249ad8a6, 0 6px 17px #249ad890; }
+  100% { box-shadow: 0 0 7px 1px #249ad84e, 0 3px 10px #249ad838; }
 }
 
 .hotspot img {

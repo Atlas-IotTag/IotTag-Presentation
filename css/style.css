@@ -26,7 +26,7 @@ html, body {
   height: auto;
   max-height: 100vh;
   min-width: 0; min-height: 0;
-  background: url('../assets/images/new_background.jpg') no-repeat center center;
+  background: url('../assets/images/new_background.webp') no-repeat center center;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -103,6 +103,9 @@ html, body {
 #hamburger-menu-list a:hover, #hamburger-menu-list a.active {
   background: #fff; color: var(--iottag-blue); font-weight: 700;
 }
+#hamburger-menu-list a.disabled:hover {
+  background: transparent; color: #fff; font-weight: 500;
+}
 @media (max-width: 740px) {
   .hamburger-menu { width: 72vw; min-width: 110px; max-width: 92vw; font-size: 0.95em; }
   .hamburger-header { font-size: 1em; padding: 10px 8px 5px 10px; }
@@ -167,6 +170,7 @@ html, body {
   border-color: #249ad8;
   box-shadow: 0 0 24px 4px #249ad8cc, 0 4px 18px #249ad8aa;
   animation: hotspot-glow 1.2s infinite alternate;
+  filter: brightness(1.50);
 }
 
 .hotspot:active {
@@ -191,7 +195,7 @@ html, body {
 }
 
 .hotspot.highlight-pulse {
-  animation: hotspot-glow 1.2s cubic-bezier(.65,0,.45,1) 2 !important;
+  animation: hotspot-glow 1.5s cubic-bezier(.65,0,.45,1) infinite alternate;
 }
 
 /* Modal Overlay */
@@ -408,4 +412,76 @@ html, body {
   .media-thumbnails { height: 56px; min-height: 56px; max-height: 56px; gap: 6px; }
   .media-thumbnail-btn { width: 100px; height: 56px; }
   .media-thumb-caption { font-size: 0.79em; padding: 1px 3px; }
+}
+
+/* Welcome Alert Box */
+.welcome-alert {
+  position: fixed;
+  top: 30px; /* Position it at the top of the screen */
+  left: 50%;
+  transform: translateX(-50%); /* Center it horizontally */
+  background: rgba(30, 30, 30, 0.9); /* Dark, semi-transparent background */
+  color: #fff;
+  padding: 12px 22px;
+  border-radius: 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  z-index: 2000; /* Make sure it's on top of most elements */
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 16px;
+  text-align: center;
+  
+  /* Animation for fade in and out */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease-in-out, top 0.5s ease-in-out;
+}
+
+/* Class to make the alert visible */
+.welcome-alert.show {
+  opacity: 1;
+  visibility: visible;
+  top: 20px; /* Animate it moving down slightly */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 600px) {
+  .welcome-alert {
+    width: 90vw;
+    padding: 10px 15px;
+    font-size: 14px;
+    top: 20px;
+  }
+  .welcome-alert.show {
+    top: 10px;
+  }
+}
+
+/* Màn hình chờ */
+.loader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #f8f8f8; /* Cùng màu nền với trang của bạn */
+  z-index: 9999; /* Luôn ở trên cùng */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.5s ease-out; /* Hiệu ứng mờ dần khi ẩn đi */
+}
+
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 6px solid #e0e0e0; /* Màu vòng tròn nền */
+  border-top-color: var(--iottag-blue, #268fc3); /* Màu của phần xoay */
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }

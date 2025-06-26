@@ -215,6 +215,7 @@ const hotspotData = [
     icon: "assets/hotspot/icon/engineer.png",
     ...percentToRatio(93.5, 6), // 1678px/1920px = 87.40%, 141px/1084px = 13.01%
     isSpecial: false,
+    isDisabled: true,
     medias: [
     ]
   },

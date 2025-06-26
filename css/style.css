@@ -307,7 +307,20 @@ html, body {
   font-weight: 400;
   margin: 18px auto 18px auto;
   line-height: 1.6;
-  text-align: left !important;
+  text-align: left;
+  width: 100%;
+  box-sizing: border-box;
+  display: block;
+}
+
+.popup-desc-qr {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 22px;
+  color: #276181;
+  font-weight: 400;
+  margin: 18px auto 18px auto;
+  line-height: 1.6;
+  text-align: center;
   width: 100%;
   box-sizing: border-box;
   display: block;
@@ -484,4 +497,8 @@ html, body {
   to {
     transform: rotate(360deg);
   }
+}
+
+.background-hamburger-icon {
+  background: #268fc3ff !important;
 }

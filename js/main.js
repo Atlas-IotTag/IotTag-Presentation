@@ -200,15 +200,9 @@ function renderHamburgerMenuList() {
     } else {
       a.onclick = function (e) {
         e.preventDefault();
-        document.querySelectorAll('.hotspot').forEach(btn => btn.classList.remove("active"));
-        list.querySelectorAll('a').forEach(el => el.classList.remove("active"));
-        // Find the actual hotspot index in the original array
-        const originalIdx = hotspotData.findIndex(item => item.label === h.label);
-        if (originalIdx !== -1) {
-          document.querySelectorAll('.hotspot')[originalIdx].classList.add("active");
-          document.querySelectorAll('.hotspot')[originalIdx].scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
-        }
-        a.classList.add("active");
+        // Open modal for the clicked item
+        openModal(h);
+        // Close the hamburger menu
         toggleHamburger(false);
       };
     }

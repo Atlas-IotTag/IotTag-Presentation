@@ -31,7 +31,7 @@ const hotspotData = [
   {
     label: "Team Alert",
     icon: "assets/hotspot/icon/iottag.png",
-    ...percentToRatio(20.7, 44), // 450px/1920px = 23.44%, 485px/1084px = 44.74%
+    ...percentToRatio(13.4, 47), // 450px/1920px = 23.44%, 485px/1084px = 44.74%
     isSpecial: false,
     medias: [
       { name: "Team Alert",
@@ -43,7 +43,7 @@ const hotspotData = [
   {
     label: "Air Quality + Wind Direction",
     icon: "assets/hotspot/icon/air-quality.png",
-    ...percentToRatio(31.42, 41), // 680px/1920px = 35.42%, 440px/1084px = 40.59%
+    ...percentToRatio(37, 46.5), // 680px/1920px = 35.42%, 440px/1084px = 40.59%
     isSpecial: false,
     medias: [
       { name: "Air Quality",
@@ -83,7 +83,7 @@ const hotspotData = [
   {
     label: "Operator ID + Cabin Temp.",
     icon: "assets/hotspot/icon/engineer.png",
-    ...percentToRatio(39, 35), // 600px/1920px = 31.25%, 380px/1084px = 35.06%
+    ...percentToRatio(38.8, 38), // 600px/1920px = 31.25%, 380px/1084px = 35.06%
     isSpecial: false,
     medias: [
       { name: "Operator Tracking Env Sensors",
@@ -148,32 +148,26 @@ const hotspotData = [
         thumbImg: "assets/hotspot/2nd_thumbnail/Tag-PPE-Verification-2-compliance-adherence-ppe-thumbnail.png" }
     ]
   },
-  // {
-  //   label: "Traffic Management",
-  //   icon: "assets/hotspot/icon/iottag.png",
-  //   ...pixelToRatio(1123, 596),
-  //   isSpecial: true,
-  //   medias: [
-  //     { name: "Traffic-Control",
-  //       desc: "Fully integrated to enhance safety and control, providing real-time guidance to workers and vehicles, helping prevent accidents and improve workflow efficiency.", 
-  //       url: "assets/hotspot/media/Traffic-Control.mp4",
-  //       thumbImg: "assets/hotspot/thumbnail/traffic-control-thumbnail.png" },
-  //     { name: "Traffic Management",
-  //       desc: "Fully integrated to enhance safety and control, providing real-time guidance to workers and vehicles, helping prevent accidents and improve workflow efficiency.", 
-  //       url: "assets/hotspot/2nd_media/traffic-control-2-traffic-management.mp4",
-  //       thumbImg: "assets/hotspot/2nd_thumbnail/traffic-control-2-traffic-management-thumbnail.png" },
-  //     { name: "Vehicle Tracking",
-  //       desc: "Fully integrated to enhance safety and control, providing real-time guidance to workers and vehicles, helping prevent accidents and improve workflow efficiency.", 
-  //       url: "assets/hotspot/2nd_media/traffic-control-3-vehicle-tracking.mp4",
-  //       thumbImg: "assets/hotspot/2nd_thumbnail/traffic-control-3-vehicle-tracking-thumbnail.png" }
-  //   ]
-  // },
-  // {
-  //   label: "Fatigue Management",
-  //   ...percentToRatio(66.46, 70.02), // 1276px/1920px = 66.46%, 759px/1084px = 70.02%
-  //   isSpecial: true,
-  //   medias: []
-  // },
+  {
+    label: "Traffic Management",
+    icon: "assets/hotspot/icon/iottag.png",
+    ...percentToRatio(24, 44), // 830px/1920px = 43.23%, 305px/1084px = 28.14%
+    isSpecial: true,
+    medias: [
+      { name: "Traffic-Control",
+        desc: "Fully integrated to enhance safety and control, providing real-time guidance to workers and vehicles, helping prevent accidents and improve workflow efficiency.", 
+        url: "assets/hotspot/media/Traffic-Control.mp4",
+        thumbImg: "assets/hotspot/thumbnail/traffic-control-thumbnail.png" },
+      { name: "Traffic Management",
+        desc: "Fully integrated to enhance safety and control, providing real-time guidance to workers and vehicles, helping prevent accidents and improve workflow efficiency.", 
+        url: "assets/hotspot/2nd_media/traffic-control-2-traffic-management.mp4",
+        thumbImg: "assets/hotspot/2nd_thumbnail/traffic-control-2-traffic-management-thumbnail.png" },
+      { name: "Vehicle Tracking",
+        desc: "Fully integrated to enhance safety and control, providing real-time guidance to workers and vehicles, helping prevent accidents and improve workflow efficiency.", 
+        url: "assets/hotspot/2nd_media/traffic-control-3-vehicle-tracking.mp4",
+        thumbImg: "assets/hotspot/2nd_thumbnail/traffic-control-3-vehicle-tracking-thumbnail.png" }
+    ]
+  },
   {
     label: "Personnel Safety Tracking",
     icon: "assets/hotspot/icon/engineer.png",
@@ -181,19 +175,19 @@ const hotspotData = [
     isSpecial: false,
     medias: [
       { name: "Personal Safety Tracking",
-        desc: "Enhancing worker safety by enabling escalaition of emergencies and providing immediate response to danger.", 
+        desc: "Enhancing worker safety by enabling escalation of emergencies and providing immediate response to danger.", 
         url: "assets/hotspot/media/Personal-Safety-Tracking.mp4",
         thumbImg: "assets/hotspot/thumbnail/personnel-safety-tracking-thumbnail.png" },
       { name: "Fatigue Management",
-        desc: "Enhancing worker safety by enabling escalaition of emergencies and providing immediate response to danger.", 
+        desc: "Enhancing worker safety by enabling escalation of emergencies and providing immediate response to danger.", 
         url: "assets/hotspot/2nd_media/personnel-safety-tracking-2-fatigue-management.mp4",
         thumbImg: "assets/hotspot/2nd_thumbnail/personnel-safety-tracking-2-fatigue-management-thumbnail.png" },
       { name: "Tracking Personnel",
-        desc: "Enhancing worker safety by enabling escalaition of emergencies and providing immediate response to danger.", 
+        desc: "Enhancing worker safety by enabling escalation of emergencies and providing immediate response to danger.", 
         url: "assets/hotspot/2nd_media/personnel-safety-tracking-3-tracking-personnel.mp4",
         thumbImg: "assets/hotspot/2nd_thumbnail/personnel-safety-tracking-3-tracking-personnel-thumbnail.png" },
       { name: "Indoor Map",
-        desc: "Enhancing worker safety by enabling escalaition of emergencies and providing immediate response to danger.", 
+        desc: "Enhancing worker safety by enabling escalation of emergencies and providing immediate response to danger.", 
         url: "assets/hotspot/2nd_media/personnel-safety-tracking-4-indoor-map.mp4",
         thumbImg: "assets/hotspot/2nd_thumbnail/personnel-safety-tracking-4-indoor-map-thumbnail.png" }
     ]

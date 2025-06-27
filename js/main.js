@@ -180,6 +180,20 @@ function toggleHamburger(forceOpen) {
 }
 document.getElementById("hamburger-btn").onclick = () => toggleHamburger();
 
+// Add click handlers for new buttons
+document.getElementById("contact-us-btn").onclick = () => {
+  const contactData = {
+    label: "Contact Us",
+    isContactUs: true,
+    qrImage: "assets/images/qr-code-dallas.png"
+  };
+  openModal(contactData);
+};
+
+document.getElementById("info-pack-btn").onclick = () => {
+  window.open("https://www.dropbox.com/scl/fi/x49iax4maggucd1on5akx/iottag_TotalSafety.pdf?rlkey=yoaio0sbpfkbw1meqn51m8sfi&e=1&st=k1m3dky2&dl=0", "_blank");
+};
+
 function renderHamburgerMenuList() {
   const list = document.getElementById("hamburger-menu-list");
   list.innerHTML = "";
@@ -212,27 +226,6 @@ function renderHamburgerMenuList() {
     li.appendChild(a);
     list.appendChild(li);
   });
-  
-  // Add Contact Us item at the end
-  const contactLi = document.createElement("li");
-  const contactA = document.createElement("a");
-  contactA.href = "#";
-  contactA.textContent = "Contact Us";
-  contactA.classList.add("contact-us");
-  contactA.onclick = function (e) {
-    e.preventDefault();
-    // Create contact data object
-    const contactData = {
-      label: "Contact Us",
-      isContactUs: true, // Special flag to identify contact us modal
-      qrImage: "assets/images/qr-code-dallas.png"
-    };
-    openModal(contactData);
-    toggleHamburger(false);
-  };
-  
-  contactLi.appendChild(contactA);
-  list.appendChild(contactLi);
 }
 
 // ============ Modal Logic =============
@@ -416,12 +409,97 @@ function switchFSIcon() {
   }
 }
 
-// ============= On Load ============
-window.onload = function () {
-  renderHotspots();
-  renderHamburgerMenuList();
-  // === ADD THIS NEW CODE BLOCK ===
-  // Show the welcome alert
+// ============ Splash Popup Functionality =============
+let currentSlide = 0;
+const splashSlides = [
+  'assets/images/splash/first-screen.png',
+  'assets/images/splash/second-screen.png'
+];
+
+// Show splash popup on page load
+document.addEventListener('DOMContentLoaded', function() {
+  // Hide loader and show splash
+  hideLoader();
+  showSplash();
+});
+
+function showSplash() {
+  const splashOverlay = document.getElementById('splash-overlay');
+  if (splashOverlay) {
+    splashOverlay.classList.remove('hidden');
+    currentSlide = 0;
+    updateSplashContent();
+    
+    // Add keyboard navigation
+    document.addEventListener('keydown', handleSplashKeyDown);
+    
+    // Focus on the modal for accessibility
+    const splashModal = splashOverlay.querySelector('.splash-modal');
+    if (splashModal) {
+      splashModal.focus();
+    }
+  }
+}
+
+function closeSplash() {
+  const splashOverlay = document.getElementById('splash-overlay');
+  if (splashOverlay) {
+    splashOverlay.classList.add('hidden');
+    
+    // Remove keyboard navigation
+    document.removeEventListener('keydown', handleSplashKeyDown);
+    
+    // Show welcome message after splash closes
+    setTimeout(() => {
+      showWelcomeMessage();
+    }, 300);
+  }
+}
+
+function goToNextSlide() {
+  if (currentSlide < splashSlides.length - 1) {
+    currentSlide++;
+    updateSplashContent();
+  } else {
+    // If on last slide and "Close" button is clicked
+    closeSplash();
+  }
+}
+
+function goToPreviousSlide() {
+  if (currentSlide > 0) {
+    currentSlide--;
+    updateSplashContent();
+  }
+}
+
+function updateSplashContent() {
+  const splashImage = document.getElementById('splash-image');
+  const backBtn = document.getElementById('splash-back-btn');
+  const nextBtn = document.getElementById('splash-next-btn');
+  
+  if (splashImage) {
+    splashImage.src = splashSlides[currentSlide];
+  }
+  
+  // Update back button state
+  if (backBtn) {
+    backBtn.disabled = currentSlide === 0;
+  }
+  
+  // Update next button text and style
+  if (nextBtn) {
+    if (currentSlide === splashSlides.length - 1) {
+      nextBtn.textContent = 'Close';
+      nextBtn.classList.add('close-btn');
+    } else {
+      nextBtn.textContent = 'Next';
+      nextBtn.classList.remove('close-btn');
+    }
+  }
+}
+
+function showWelcomeMessage() {
   const welcomeAlert = document.getElementById('welcome-alert');
   if (welcomeAlert) {
     // 1. A short delay before showing the alert for a smoother feel
@@ -434,19 +512,48 @@ window.onload = function () {
       welcomeAlert.classList.remove('show');
     }, 6000); // Alert is visible for 5.5 seconds (6000 - 500)
   }
-  // === END OF NEW CODE BLOCK ===
-  // === THÊM ĐOẠN CODE NÀY ĐỂ ẨN MÀN HÌNH CHỜ ===
+}
+
+// ============ Loader Functions ============
+function hideLoader() {
   const loader = document.getElementById('loader-overlay');
   if (loader) {
     loader.style.opacity = '0';
-    // Xóa hoàn toàn khỏi DOM sau khi hiệu ứng kết thúc để không cản trở tương tác
     setTimeout(() => {
       loader.style.display = 'none';
-    }, 500); // Phải khớp với thời gian transition trong CSS
+    }, 500);
   }
+}
+
+// ============ On Load ============
+window.onload = function () {
+  renderHotspots();
+  renderHamburgerMenuList();
+  // Loader and splash are now handled by DOMContentLoaded event
 };
 
 // Add window resize event listener to re-render hotspots when screen size changes
 window.addEventListener('resize', function () {
   renderHotspots();
 });
+
+function handleSplashKeyDown(event) {
+  switch(event.key) {
+    case 'ArrowRight':
+    case 'Enter':
+    case ' ': // Spacebar
+      event.preventDefault();
+      goToNextSlide();
+      break;
+    case 'ArrowLeft':
+      event.preventDefault();
+      if (currentSlide > 0) {
+        goToPreviousSlide();
+      }
+      break;
+    case 'Escape':
+      event.preventDefault();
+      closeSplash();
+      break;
+  }
+}

@@ -14,6 +14,17 @@
     <span class="background-hamburger-icon"></span>
     <span class="background-hamburger-icon"></span>
   </button>
+  
+  <!-- Info Pack button -->
+  <button class="info-pack-btn" id="info-pack-btn" title="Info Pack">
+    <img src="assets/images/info-pack.png" alt="Info Pack" />
+  </button>
+  
+  <!-- Contact Us button -->
+  <button class="contact-us-btn" id="contact-us-btn" title="Contact Us">
+    <img src="assets/images/contact-us.png" alt="Contact Us" />
+  </button>
+
   <!-- Hamburger menu (slide from left) -->
   <nav class="hamburger-menu" id="hamburger-menu">
     <div class="hamburger-header">
@@ -28,7 +39,7 @@
   </div>
   <!-- Add this new alert box -->
   <div id="welcome-alert" class="welcome-alert">
-    Welcome! Click any glowing button to explore more info and watch videos.
+    Welcome! Click the captions to learn about Total Site Safety solutions
   </div>
   <!-- Map background -->
   <div class="bg-wrapper">
@@ -59,6 +70,22 @@
         <p id="popup-desc" class="popup-desc"></p>
       </div>
     </div>
+
+  <!-- Splash Popup -->
+  <div id="splash-overlay" class="splash-overlay">
+    <div class="splash-modal">
+      <div class="splash-header">
+        <button class="splash-close-btn" onclick="closeSplash()" title="Close">×</button>
+      </div>
+      <div class="splash-content">
+        <img id="splash-image" src="assets/images/splash/first-screen.png" alt="Splash Screen" />
+      </div>
+      <div class="splash-controls">
+        <button id="splash-back-btn" class="splash-nav-btn splash-back" onclick="goToPreviousSlide()" disabled>Back</button>
+        <button id="splash-next-btn" class="splash-nav-btn splash-next" onclick="goToNextSlide()">Next</button>
+      </div>
+    </div>
+  </div>
 
 </div>
 

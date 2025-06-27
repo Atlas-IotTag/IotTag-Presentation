@@ -140,7 +140,7 @@ function renderHotspots() {
     iconBox.appendChild(img);
 
     const content = document.createElement("div");
-    if (h.label === 'Fall Detection SOS' || h.label === 'Equipment Inspection' || h.label === 'Manrider Occupants ID' || h.label === 'Personnel Safety Tracking' || h.label === 'Safety Inspections' || h.label === 'Refuge Chamber')
+    if (h.label === 'Fall Detection SOS' || h.label === 'Equipment Inspection' || h.label === 'Manrider Occupants ID' || h.label === 'Personnel Safety Tracking' || h.label === 'Safety Inspections' || h.label === 'Refuge Chamber' || h.label === 'Leadership Tools')
       content.style.color = "white"
     content.className = "alert-content";
     content.style.flex = "1";
@@ -420,7 +420,7 @@ const splashSlides = [
 document.addEventListener('DOMContentLoaded', function() {
   // Hide loader and show splash
   hideLoader();
-  showSplash();
+  showWelcomeMessage();
 });
 
 function showSplash() {

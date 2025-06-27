@@ -50,6 +50,29 @@ html, body {
 }
 .hamburger-btn span { display: block; width: 22px; height: 3px; background: #444; border-radius: 2px; }
 
+/* Info Pack Button */
+.info-pack-btn {
+  position: fixed; top: 68px; left: 18px; z-index: 1250;
+  background: #fff; border: none; width: 40px; height: 40px; border-radius: 50%;
+  box-shadow: 0 2px 8px #0002; display: flex; justify-content: center; align-items: center; cursor: pointer; padding: 0;
+}
+.info-pack-btn img { width: 24px; height: 24px; object-fit: contain; }
+
+/* Contact Us Button */
+.contact-us-btn {
+  position: fixed; top: 118px; left: 18px; z-index: 1250;
+  background: #fff; border: none; width: 40px; height: 40px; border-radius: 50%;
+  box-shadow: 0 2px 8px #0002; display: flex; justify-content: center; align-items: center; cursor: pointer; padding: 0;
+}
+.contact-us-btn img { width: 24px; height: 24px; object-fit: contain; }
+
+/* Hover effects for new buttons */
+.contact-us-btn:hover, .contact-us-btn:focus,
+.info-pack-btn:hover, .info-pack-btn:focus,
+.hamburger-btn:hover, .hamburger-btn:focus {
+  background: #f0f0f0; outline: none;
+}
+
 /* Sidebar Menu */
 :root { --iottag-blue: #268fc3; }
 .hamburger-menu {
@@ -227,6 +250,10 @@ html, body {
   transition: opacity 0.18s cubic-bezier(.53,1.6,.57,1);
   display: flex;
   flex-direction: column;
+  outline: none; /* Remove default focus outline since we'll use custom focus */
+}
+.modal:focus {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 0 3px rgba(0, 123, 255, 0.5);
 }
 .modal.show {
   opacity: 1;
@@ -246,7 +273,7 @@ html, body {
 }
 .mui-close-btn {
   position: absolute;
-  left: 16px;
+  right: 30px; /* Changed from left: 16px to right: 16px */
   top: 50%;
   transform: translateY(-50%);
   background: #fff;
@@ -501,4 +528,199 @@ html, body {
 
 .background-hamburger-icon {
   background: #268fc3ff !important;
+}
+
+/* Splash Popup Styles */
+.splash-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.splash-overlay:not(.hidden) {
+  opacity: 1;
+  visibility: visible;
+}
+
+.splash-overlay.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.splash-modal {
+  position: relative;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  width: 88vw;
+  max-width: 1500px;
+  height: 94vh;
+  max-height: 96vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: splashSlideIn 0.4s ease-out;
+  outline: none; /* Remove default focus outline since we'll use custom focus */
+}
+
+.splash-modal:focus {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 0 3px rgba(0, 123, 255, 0.5);
+}
+
+.splash-header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 15px;
+  background: transparent;
+  min-height: 45px;
+}
+
+.splash-close-btn {
+  background: rgba(0, 0, 0, 0.6);
+  margin-right: 10px;
+  color: white;
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+
+.splash-close-btn:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+@keyframes splashSlideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.splash-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 0 20px 20px 20px;
+  overflow: hidden;
+}
+
+.splash-content img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.splash-controls {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  border-top: 1px solid #e9ecef;
+}
+
+.splash-nav-btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 80px;
+}
+
+.splash-back {
+  background: #6c757d;
+  color: white;
+}
+
+.splash-back:not(:disabled):hover {
+  background: #5a6268;
+  transform: translateY(-1px);
+}
+
+.splash-back:disabled {
+  background: #e9ecef;
+  color: #6c757d;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.splash-next {
+  background: #007bff;
+  color: white;
+}
+
+.splash-next:hover {
+  background: #0056b3;
+  transform: translateY(-1px);
+}
+
+.splash-next.close-btn {
+  background: #28a745;
+}
+
+.splash-next.close-btn:hover {
+  background: #1e7e34;
+}
+
+/* Responsive adjustments for splash popup */
+@media (max-width: 768px) {
+  .splash-modal {
+    width: 95vw;
+    height: 80vh;
+    margin: 10px;
+  }
+  
+  .splash-content {
+    padding: 15px;
+  }
+  
+  .splash-controls {
+    padding: 15px;
+  }
+  
+  .splash-nav-btn {
+    padding: 10px 16px;
+    font-size: 14px;
+    min-width: 70px;
+  }
+}
+
+@media (max-width: 480px) {
+  .splash-modal {
+    width: 98vw;
+    height: 85vh;
+    margin: 5px;
+  }
+  
+  .splash-content {
+    padding: 10px;
+  }
+  
+  .splash-controls {
+    padding: 10px;
+  }
 }

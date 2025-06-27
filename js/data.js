@@ -69,12 +69,12 @@ const hotspotData = [
     ]
   },
   {
-    label: "Toolbox Meeting",
+    label: "Leadership Tools",
     icon: "assets/hotspot/icon/iottag.png",
     ...percentToRatio(49.5, 94), // 900px/1920px = 46.88%, 900px/1084px = 83.03%
     isSpecial: false,
     medias: [
-      { name: "Toolbox Meeting",
+      { name: "Leadership Tools",
         desc: "Streamline operations by integrating, accurately validate attendance via safety tags and deliver sessions information to contractor app's to manage action items.",
         url: "assets/hotspot/media/Toolbox-Meeting.mp4",
         thumbImg: "assets/hotspot/thumbnail/toolbox-meeting-thumbnail.png" }

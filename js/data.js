@@ -1,6 +1,6 @@
 const hotspotData = [
   {
-    label: "Assembly Point",
+    label: "Evacuation Assembly Point",
     icon: "assets/hotspot/icon/iottag.png",
     ...percentToRatio(8.5, 55.5),
     isSpecial: false,
@@ -62,10 +62,16 @@ const hotspotData = [
     ...percentToRatio(49.5, 30), // 830px/1920px = 43.23%, 305px/1084px = 28.14%
     isSpecial: false,
     medias: [
-      { name: "Logistics + Supply Chain",
+      { name: "Aboveground tracking",
         desc: "Enhance operational efficiency, enhances visibility, reducing delays and improving overall supply chain performance.", 
         url: "assets/hotspot/media/Logistics-supply-chain.mp4",
-        thumbImg: "assets/hotspot/thumbnail/logistics-supply-chain-thumbnail.png" }
+        thumbImg: "assets/hotspot/thumbnail/logistics-supply-chain-thumbnail.png"
+      },
+      { name: "Underground tracking",
+        desc: "Enhance operational efficiency, enhances visibility, reducing delays and improving overall supply chain performance.", 
+        url: "assets/hotspot/media/asset-list-logistics-supply-chain_2.mp4",
+        thumbImg: "assets/hotspot/thumbnail/logistics_supply_chain_2_thumbnail.png"
+      },
     ]
   },
   {
@@ -86,10 +92,16 @@ const hotspotData = [
     ...percentToRatio(38.8, 38), // 600px/1920px = 31.25%, 380px/1084px = 35.06%
     isSpecial: false,
     medias: [
-      { name: "Operator Tracking Env Sensors",
+      { name: "Operator Tracking",
         desc: "Enhancing safety tracking for machine and vehicle operators in challenging, uncomfortable and isolated spaces.", 
         url: "assets/hotspot/media/Operator-tracking-env-sensors.mp4",
-        thumbImg: "assets/hotspot/thumbnail/operator-tracking-env-sensors-thumbnail.png" }
+        thumbImg: "assets/hotspot/thumbnail/operator-tracking-env-sensors-thumbnail.png"
+      },
+      { name: "Cabin temp",
+        desc: "Enhancing safety tracking for machine and vehicle operators in challenging, uncomfortable and isolated spaces.", 
+        url: "assets/hotspot/media/operater-id+cabin-temp-roadheader-temp_2.mp4",
+        thumbImg: "assets/hotspot/thumbnail/operater_id_cabin_temp_2_thumbnail.png"
+      },
     ]
   },
   {

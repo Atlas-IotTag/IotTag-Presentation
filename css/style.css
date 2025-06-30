@@ -328,6 +328,7 @@ html, body {
   margin-right: auto;
 }
 #popup-desc, .popup-desc {
+  padding: 0px 4rem;
   font-family: 'Open Sans', Arial, sans-serif;
   font-size: 22px;
   color: #276181;

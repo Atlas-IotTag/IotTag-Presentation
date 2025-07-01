@@ -5,10 +5,15 @@ const hotspotData = [
     ...percentToRatio(8.5, 55.5),
     isSpecial: false,
     medias: [
-      { name: "Assembly Muster Point",
+      { name: "Digital Tag Board",
         desc: "Enable personnel to initiate a duress signal and evacuation procedures. SMS and email links are sent to management teams to facilitate a smooth and coordinated evacuation.", 
         url: "assets/hotspot/media/Assembly-Muster-Point.mp4",
         thumbImg: "assets/hotspot/thumbnail/assembly-point-thumbnail.png",
+      },
+      { name: "Evacuation Assembly Point",
+        desc: "Enable personnel to initiate a duress signal and evacuation procedures. SMS and email links are sent to management teams to facilitate a smooth and coordinated evacuation.", 
+        url: "assets/hotspot/media/evacuation_2.mp4",
+        thumbImg: "assets/hotspot/thumbnail/evacuation_2.png",
       }
     ]
   },
@@ -25,7 +30,11 @@ const hotspotData = [
       { name: "Hazards",
         desc: "Instant alerts from helmet tags ensure critical events are actioned immediately.  Real-time updates allow first responders to react swiftly and locate personnel in distress.", 
         url: "assets/hotspot/2nd_media/fall-detection-SOS-2-hazards.mp4",
-        thumbImg: "assets/hotspot/2nd_thumbnail/fall-detection-SOS-2-hazards-thumbnail.png" }
+        thumbImg: "assets/hotspot/2nd_thumbnail/fall-detection-SOS-2-hazards-thumbnail.png" },
+      { name: "SOS Alert",
+        desc: "Instant alerts from helmet tags ensure critical events are actioned immediately.  Real-time updates allow first responders to react swiftly and locate personnel in distress.", 
+        url: "assets/hotspot/media/sos_alert.mp4",
+        thumbImg: "assets/hotspot/thumbnail/sos_alert.png" }
     ]
   },
   {
@@ -62,14 +71,19 @@ const hotspotData = [
     ...percentToRatio(49.5, 30), // 830px/1920px = 43.23%, 305px/1084px = 28.14%
     isSpecial: false,
     medias: [
-      { name: "Aboveground tracking",
+      { name: "Aboveground Tracking",
         desc: "Enhance operational efficiency, enhances visibility, reducing delays and improving overall supply chain performance.", 
         url: "assets/hotspot/media/Logistics-supply-chain.mp4",
         thumbImg: "assets/hotspot/thumbnail/logistics-supply-chain-thumbnail.png"
       },
-      { name: "Underground tracking",
+      { name: "Asset Tracking",
         desc: "Enhance operational efficiency, enhances visibility, reducing delays and improving overall supply chain performance.", 
         url: "assets/hotspot/media/asset-list-logistics-supply-chain_2.mp4",
+        thumbImg: "assets/hotspot/thumbnail/logistics_supply_chain_2_thumbnail.png"
+      },
+      { name: "Underground Tracking",
+        desc: "Enhance operational efficiency, enhances visibility, reducing delays and improving overall supply chain performance.", 
+        url: "assets/hotspot/media/Operator-tracking-env-sensors.mp4",
         thumbImg: "assets/hotspot/thumbnail/logistics_supply_chain_2_thumbnail.png"
       },
     ]
@@ -83,7 +97,11 @@ const hotspotData = [
       { name: "Leadership Tools",
         desc: "Streamline operations by integrating, accurately validate attendance via safety tags and deliver sessions information to contractor app's to manage action items.",
         url: "assets/hotspot/media/Toolbox-Meeting.mp4",
-        thumbImg: "assets/hotspot/thumbnail/toolbox-meeting-thumbnail.png" }
+        thumbImg: "assets/hotspot/thumbnail/toolbox-meeting-thumbnail.png" },
+      { name: "Toolbox Meeting",
+        desc: "Streamline operations by integrating, accurately validate attendance via safety tags and deliver sessions information to contractor app's to manage action items.",
+        url: "assets/hotspot/media/leadership-tools-toolbox meeting.mp4",
+        thumbImg: "assets/hotspot/thumbnail/toolbox-meeting-placeholder.png" }
     ]
   },
   {

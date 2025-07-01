@@ -84,7 +84,7 @@ const hotspotData = [
       { name: "Underground Tracking",
         desc: "Enhance operational efficiency, enhances visibility, reducing delays and improving overall supply chain performance.", 
         url: "assets/hotspot/media/Operator-tracking-env-sensors.mp4",
-        thumbImg: "assets/hotspot/thumbnail/logistics_supply_chain_2_thumbnail.png"
+        thumbImg: "assets/hotspot/thumbnail/operator-tracking-env-sensors-thumbnail.png"
       },
     ]
   },
@@ -105,7 +105,7 @@ const hotspotData = [
     ]
   },
   {
-    label: "Operator ID + Cabin Temp.",
+    label: "Operator ID + Cabin Temp",
     icon: "assets/hotspot/icon/engineer.png",
     ...percentToRatio(38.8, 38), // 600px/1920px = 31.25%, 380px/1084px = 35.06%
     isSpecial: false,

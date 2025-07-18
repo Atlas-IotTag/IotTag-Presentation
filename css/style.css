@@ -320,6 +320,7 @@ html, body {
   justify-content: flex-start;
   padding: 16px;
 }
+
 .media-wrapper,
 .media-thumbnails,
 #popup-desc, .popup-desc {
@@ -446,6 +447,7 @@ html, body {
 @media (max-width: 1100px) {
   .media-thumbnails { height: 80px; min-height: 80px; max-height: 80px; }
   .media-thumbnail-btn { width: 142px; height: 80px; }
+  .tab-btn { font-size: 14px; padding: 10px 16px; }
 }
 
 /* Responsive Mobile */
@@ -453,6 +455,8 @@ html, body {
   .media-thumbnails { height: 56px; min-height: 56px; max-height: 56px; gap: 6px; }
   .media-thumbnail-btn { width: 100px; height: 56px; }
   .media-thumb-caption { font-size: 0.79em; padding: 1px 3px; }
+  .tab-btn { font-size: 12px; padding: 8px 12px; }
+  .modal-tabs { margin: 0 auto 12px auto; }
 }
 
 /* Welcome Alert Box */

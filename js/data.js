@@ -14,6 +14,12 @@ const hotspotData = [
         desc: "Enable personnel to initiate a duress signal and evacuation procedures. SMS and email links are sent to management teams to facilitate a smooth and coordinated evacuation.", 
         url: "assets/hotspot/media/evacuation_2.mp4",
         thumbImg: "assets/hotspot/thumbnail/evacuation_2.png",
+      },
+      {
+        name: "Emergency Response Score",
+        desc: "Enable personnel to initiate a duress signal and evacuation procedures. SMS and email links are sent to management teams to facilitate a smooth and coordinated evacuation.", 
+        url: "assets/hotspot/images/emergency-response-score.png",
+        thumbImg: "assets/hotspot/images/emergency-response-score.png"
       }
     ]
   },
@@ -46,7 +52,13 @@ const hotspotData = [
       { name: "Team Alert",
         desc: "Empower workers by providing real-time tools for managing safety and foster a safer work environment. Enhance compliance adherence and the overall well-being of the workforce.", 
         url: "assets/hotspot/media/Team-Alert.mp4",
-        thumbImg: "assets/hotspot/thumbnail/team-alert-thumbnail.png" }
+        thumbImg: "assets/hotspot/thumbnail/team-alert-thumbnail.png" },
+      {
+        name: "Feedback Safety Score",
+        desc: "Empower workers by providing real-time tools for managing safety and foster a safer work environment. Enhance compliance adherence and the overall well-being of the workforce.", 
+        url: "assets/hotspot/images/feedback-safety-score.png",
+        thumbImg: "assets/hotspot/images/feedback-safety-score.png"
+      }
     ]
   },
   {
@@ -63,6 +75,12 @@ const hotspotData = [
         desc: "Monitoring levels in real time, ensuring safe working conditions by providing essential data for proactive risk management and compliance.", 
         url: "assets/hotspot/2nd_media/air-quality-2-sustainability-co2.mp4",
         thumbImg: "assets/hotspot/2nd_thumbnail/air-quality-2-sustainability-co2-thumbnail.png" },
+      {
+        name: "Environmental Safety Score",
+        desc: "Monitoring levels in real time, ensuring safe working conditions by providing essential data for proactive risk management and compliance.", 
+        url: "assets/hotspot/images/environmental-safety-score.png",
+        thumbImg: "assets/hotspot/images/environmental-safety-score.png"
+      }
     ]
   },
   {
@@ -101,7 +119,13 @@ const hotspotData = [
       { name: "Toolbox Meeting",
         desc: "Streamline operations by integrating, accurately validate attendance via safety tags and deliver sessions information to contractor app's to manage action items.",
         url: "assets/hotspot/media/leadership-tools-toolbox meeting.mp4",
-        thumbImg: "assets/hotspot/thumbnail/toolbox-meeting-placeholder.png" }
+        thumbImg: "assets/hotspot/thumbnail/toolbox-meeting-placeholder.png" },
+      {
+        name: "Safety Leadership Score",
+        desc: "Streamline operations by integrating, accurately validate attendance via safety tags and deliver sessions information to contractor app's to manage action items.",
+        url: "assets/hotspot/images/leadership-score.png",
+        thumbImg: "assets/hotspot/images/leadership-score.png"
+      }
     ]
   },
   {
@@ -135,7 +159,19 @@ const hotspotData = [
       { name: "Tracking Equipment",
         desc: "Streamline operations by integrating safety management and operational efficiency. Enable better decision-making, ensure compliance and boosts overall productivity and safety outcomes.", 
         url: "assets/hotspot/2nd_media/Equipment-Inspection-2-tracking-equipment.mp4",
-        thumbImg: "assets/hotspot/2nd_thumbnail/Equipment-Inspection-2-tracking-equipment-thumbnail.png" }
+        thumbImg: "assets/hotspot/2nd_thumbnail/Equipment-Inspection-2-tracking-equipment-thumbnail.png" },
+      {
+        name: "Hazard Identification Score",
+        desc: "Streamline operations by integrating safety management and operational efficiency. Enable better decision-making, ensure compliance and boosts overall productivity and safety outcomes.", 
+        url: "assets/hotspot/images/hazard-identification-score.png",
+        thumbImg: "assets/hotspot/images/hazard-identification-score.png"
+      },
+      {
+        name: "Training Safety Score",
+        desc: "Streamline operations by integrating safety management and operational efficiency. Enable better decision-making, ensure compliance and boosts overall productivity and safety outcomes.", 
+        url: "assets/hotspot/images/training-education-score.png",
+        thumbImg: "assets/hotspot/images/training-education-score.png"
+      }
     ]
   },
   {
@@ -175,7 +211,13 @@ const hotspotData = [
       { name: "compliance-adherence-ppe",
         desc: "Monitoring compliance, improving worker safety and ensuring adherence to site regulations in real time.", 
         url: "assets/hotspot/2nd_media/Tag-PPE-Verification-2-compliance-adherence-ppe.mp4",
-        thumbImg: "assets/hotspot/2nd_thumbnail/Tag-PPE-Verification-2-compliance-adherence-ppe-thumbnail.png" }
+        thumbImg: "assets/hotspot/2nd_thumbnail/Tag-PPE-Verification-2-compliance-adherence-ppe-thumbnail.png" },
+      {
+        name: "Compliance Safety Score",
+        desc: "Monitoring compliance, improving worker safety and ensuring adherence to site regulations in real time.", 
+        url: "assets/hotspot/images/compliance-adherence-score.png",
+        thumbImg: "assets/hotspot/images/compliance-adherence-score.png"
+      }
     ]
   },
   {
@@ -195,7 +237,13 @@ const hotspotData = [
       { name: "Vehicle Tracking",
         desc: "Fully integrated to enhance safety and control, providing real-time guidance to workers and vehicles, helping prevent accidents and improve workflow efficiency.", 
         url: "assets/hotspot/2nd_media/traffic-control-3-vehicle-tracking.mp4",
-        thumbImg: "assets/hotspot/2nd_thumbnail/traffic-control-3-vehicle-tracking-thumbnail.png" }
+        thumbImg: "assets/hotspot/2nd_thumbnail/traffic-control-3-vehicle-tracking-thumbnail.png" },
+      {
+        name: "Situational Safety Score",
+        desc: "Fully integrated to enhance safety and control, providing real-time guidance to workers and vehicles, helping prevent accidents and improve workflow efficiency.", 
+        url: "assets/hotspot/images/situational-safety-score.png",
+        thumbImg: "assets/hotspot/images/situational-safety-score.png"
+      }
     ]
   },
   {
@@ -219,7 +267,19 @@ const hotspotData = [
       { name: "Indoor Map",
         desc: "Enhancing worker safety by enabling escalation of emergencies and providing immediate response to danger.", 
         url: "assets/hotspot/2nd_media/personnel-safety-tracking-4-indoor-map.mp4",
-        thumbImg: "assets/hotspot/2nd_thumbnail/personnel-safety-tracking-4-indoor-map-thumbnail.png" }
+        thumbImg: "assets/hotspot/2nd_thumbnail/personnel-safety-tracking-4-indoor-map-thumbnail.png" },
+      {
+        name: "Safety Overview Score",
+        desc: "Enhancing worker safety by enabling escalation of emergencies and providing immediate response to danger.", 
+        url: "assets/hotspot/images/safety-score.png",
+        thumbImg: "assets/hotspot/images/safety-score.png"
+      },
+      {
+        name: "Fatigue Management Score",
+        desc: "Enhancing worker safety by enabling escalation of emergencies and providing immediate response to danger.", 
+        url: "assets/hotspot/images/fatigue-management-score.png",
+        thumbImg: "assets/hotspot/images/fatigue-management-score.png"
+      }
     ]
   },
   {
@@ -231,7 +291,19 @@ const hotspotData = [
       { name: "Safety Inspection",
         desc: "Streamline operations by integrating safety management and operational efficiency. Enable better decision-making, ensure compliance and boosts overall productivity and safety outcomes.", 
         url: "assets/hotspot/media/Safety-Inspection.mp4",
-        thumbImg: "assets/hotspot/thumbnail/safety-inspection-thumbnail.png" }
+        thumbImg: "assets/hotspot/thumbnail/safety-inspection-thumbnail.png" },
+      {
+        name: "Hazard Identification Score",
+        desc: "Enhancing worker safety by enabling escalation of emergencies and providing immediate response to danger.", 
+        url: "assets/hotspot/images/hazard-identification-score.png",
+        thumbImg: "assets/hotspot/images/hazard-identification-score.png"
+      },
+      {
+        name: "Training Safety Score",
+        desc: "Enhancing worker safety by enabling escalation of emergencies and providing immediate response to danger.", 
+        url: "assets/hotspot/images/training-education-score.png",
+        thumbImg: "assets/hotspot/images/training-education-score.png"
+      }
     ]
   },
   {

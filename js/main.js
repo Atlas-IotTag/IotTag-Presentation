@@ -270,16 +270,13 @@ function openModal(data) {
     popupDesc.style.textAlign = "left"; // Remove dark background for QR code
   }
   
-  // Original modal logic for regular items
+  // Original modal logic for regular items - now includes both videos and images
   if (Array.isArray(data.medias) && data.medias.length) {
-    currentMedias = data.medias.filter(m => {
-      if (!m.url) return false;
-      const url = m.url.split("?")[0].toLowerCase();
-      return url.endsWith(".mp4");
-    });
+    currentMedias = data.medias; // Include all medias (both videos and images)
   } else {
     currentMedias = [];
   }
+  
   currentMediaIndex = 0;
 
   document.getElementById("modal").classList.add("show");
@@ -316,8 +313,9 @@ function showMediaAtIndex(idx) {
   const fileUrl = currentMedias[idx].url;
   let ext = (fileUrl.split('.').pop() || '').toLowerCase();
 
-  // ONLY PLAY .mp4
+  // Check if it's a video file
   if (ext === "mp4") {
+    wrapper.style.background = "#222"; // Dark background for videos
     const video = document.createElement("video");
     video.controls = true;
     video.loop = true;
@@ -331,8 +329,21 @@ function showMediaAtIndex(idx) {
     video.appendChild(source);
     wrapper.appendChild(video);
     setTimeout(() => { video.load(); video.play().catch(() => { }); }, 50);
-  } else {
-    wrapper.innerHTML = "<div style='color:gray;padding:2em 0;text-align:center;'>Cannot preview this file. Only MP4 format is supported.</div>";
+  } 
+  // Check if it's an image file
+  else if (ext === "png" || ext === "jpg" || ext === "jpeg" || ext === "gif" || ext === "webp") {
+    wrapper.style.background = "#f8f9fa"; // Light background for images
+    const img = document.createElement("img");
+    img.src = fileUrl;
+    img.alt = currentMedias[idx].name || "Safety Score Image";
+    img.style.width = "100%";
+    img.style.height = "100%";
+    img.style.objectFit = "contain";
+    img.style.borderRadius = "8px";
+    wrapper.appendChild(img);
+  } 
+  else {
+    wrapper.innerHTML = "<div style='color:gray;padding:2em 0;text-align:center;'>Cannot preview this file. Only MP4 and image formats are supported.</div>";
   }
 }
 
